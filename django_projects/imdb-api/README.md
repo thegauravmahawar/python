@@ -30,8 +30,14 @@ docker-compose run --rm app sh -c "python manage.py test"
 
 ## Django Commands
 
-**Start project**
+**Create project**
 
 ```commandline
 docker-compose run --rm app sh -c "django-admin startproject app ."
+```
+
+**Create app**
+
+```commandline
+docker-compose run --rm app sh -c "python manage.py startapp core"
 ```

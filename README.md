@@ -1,6 +1,5 @@
 # python
 
-## Topics
+## Projects
 
-- [Algorithms](algorithms)
-- [Django Projects](django_projects)
+- [TODO API](projects/todo-api)

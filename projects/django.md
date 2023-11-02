@@ -3,6 +3,7 @@
 ## References
 
 - [Django Introduction](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
+- [Django Model Indexes](https://docs.djangoproject.com/en/4.2/ref/models/indexes/)
 
 Django comes with the `django-admin` utility that creates a project's skeleton. 
 

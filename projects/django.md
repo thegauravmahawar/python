@@ -30,6 +30,18 @@ cd api
 django-admin startapp user
 ```
 
+**Make migrations**
+
+```shell
+python manage.py makemigrations app_name
+```
+
+**Run migrations**
+
+```shell
+python manage.py migrate app_name
+```
+
 ## manage.py
 
 This file is a command-line utility for administrative purposes. One can interchangeably use 

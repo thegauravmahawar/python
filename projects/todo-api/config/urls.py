@@ -28,5 +28,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-print(router.urls)
 urlpatterns += router.urls

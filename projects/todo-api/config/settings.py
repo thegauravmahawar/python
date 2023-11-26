@@ -50,7 +50,7 @@ MIDDLEWARE = [
 ]
 
 REST_FRAMEWORK = {
-    'EXCEPTION_HANDLER': 'config.exception_handler'
+    'EXCEPTION_HANDLER': 'config.exception_handler.custom_exception_handler'
 }
 
 ROOT_URLCONF = 'config.urls'

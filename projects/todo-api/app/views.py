@@ -1,16 +1,29 @@
 from django.contrib.auth import get_user_model
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import AllowAny
+
+from .exceptions import UnhandledException
 from .serializers import UserSerializer
-from .models import User
 
 
 class UserViewSet(ModelViewSet):
-    serializer_class = UserSerializer
 
     def create(self, request, **kwargs):
-        get_user_model().objects.create_user(**request.data)
-        return JsonResponse(status=200, data={'status': 'success', 'data': 'ok'})
+        try:
+            user = get_user_model().objects.create_user(**request.data)
+            return JsonResponse(
+                status=200,
+                data={
+                    'status': 'success',
+                    'data': {
+                        'email': user.email,
+                        'created_at': user.created_at
+                    }
+                }
+            )
+        except Exception as e:
+            raise UnhandledException(str(e))
 
     def update(self, request, pk=None, **kwargs):
         print('POST')

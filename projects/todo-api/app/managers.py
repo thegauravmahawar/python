@@ -6,7 +6,7 @@ from app.exceptions import InvalidRequestException
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, email, password, **extra_fields):
+    def create_user(self, email='', password='', **extra_fields):
         if not email or not password:
             raise InvalidRequestException('Please provide an email address and password.')
         email = self.normalize_email(email)
